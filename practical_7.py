@@ -1,4 +1,12 @@
 # backtracking search for 8-queens problem
+#
+# algorithm:
+# 1. start placing queens from row 0 up to row 7
+# 2. for current row, try placing queen in each column 0 to 7
+# 3. check if column or diagonals conflict with placed queens
+# 4. if safe, place queen and recursively move to next row
+# 5. if all 8 queens placed, solution found
+# 6. if placing fails, backtrack by removing queen and try next column
 
 N = 8
 

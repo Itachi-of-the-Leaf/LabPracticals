@@ -1,4 +1,13 @@
 # depth first search (dfs) for water jug problem
+#
+# algorithm:
+# 1. define jug capacities (4l and 3l) and goal state (2l in any jug)
+# 2. initialize stack and visited set with initial state (0, 0)
+# 3. pop top state from stack
+# 4. if goal state reached, trace back path using parents and stop
+# 5. generate valid next states (fill, empty, pour between jugs)
+# 6. push unvisited successors onto stack
+# 7. repeat until goal is reached or stack is empty
 
 CAPACITY_A = 4
 CAPACITY_B = 3

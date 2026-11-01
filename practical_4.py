@@ -1,6 +1,16 @@
 import random
 
 # local beam search for travelling salesman problem (tsp)
+#
+# algorithm:
+# 1. define distance matrix, beam width k, and max iterations
+# 2. generate k random initial tours and compute their costs
+# 3. track lowest cost tour as global best
+# 4. for each tour in beam, generate neighbor tours using 2-opt moves
+# 5. remove duplicate tours and sort successors by cost
+# 6. select top k lowest-cost unique tours for next beam
+# 7. update global best if an improved tour is found
+# 8. stop if max iterations reached or no improvement for patience limit
 
 CITIES = ['A', 'B', 'C', 'D', 'E', 'F']
 

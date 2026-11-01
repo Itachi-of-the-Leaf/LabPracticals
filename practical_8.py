@@ -1,6 +1,16 @@
 import sys
 
 # rule-based chatbot using pattern matching
+#
+# algorithm:
+# 1. define predefined keyword patterns and responses
+# 2. display welcome message to user
+# 3. accept user message and convert to lowercase
+# 4. if message matches exit keyword ('bye', 'exit', 'quit'), stop chatbot
+# 5. check message against rules in sequence
+# 6. if matching keyword found, output predefined response
+# 7. if no match, output default fallback response
+# 8. repeat for next user input
 
 RULES = [
     (['hello', 'hi', 'hey'], "Hello! How can I help you?"),

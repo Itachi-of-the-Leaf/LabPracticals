@@ -1,6 +1,17 @@
 import heapq
 
 # a* algorithm for 8 puzzle problem using misplaced tiles heuristic
+#
+# algorithm:
+# 1. define initial state and goal state
+# 2. calculate h(n) using misplaced tiles heuristic
+# 3. calculate f(n) = g(n) + h(n) with g(start) = 0
+# 4. push initial state to priority queue (open list)
+# 5. pop state with lowest f(n)
+# 6. if goal reached, reconstruct and display move path
+# 7. else generate valid neighbor states by moving blank tile
+# 8. compute g, h, f for new states and add unvisited to priority queue
+# 9. repeat until goal is found
 
 INITIAL_STATE = (
     (2, 8, 3),

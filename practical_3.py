@@ -1,6 +1,16 @@
 from collections import deque
 
 # tower of hanoi using state space search (bfs)
+#
+# algorithm:
+# 1. define source (a), auxiliary (b), and destination (c) pegs
+# 2. set initial state with all disks on peg a and empty pegs b, c
+# 3. push initial state into fifo queue and mark visited
+# 4. pop front state from queue
+# 5. if all disks are on peg c in order, reconstruct path and stop
+# 6. generate all legal disk moves between peg pairs
+# 7. for each unvisited successor state, store parent and push to queue
+# 8. repeat until goal is reached
 
 def is_goal_state(state, n):
     # goal is all disks on peg C in decreasing order

@@ -1,6 +1,15 @@
 from collections import deque
 
 # breadth first search (bfs) for 8 puzzle problem
+#
+# algorithm:
+# 1. define initial board state and goal state
+# 2. initialize fifo queue and visited set with initial state
+# 3. pop front state from queue
+# 4. if goal state reached, reconstruct solution path and stop
+# 5. generate valid successor boards by moving blank tile (up/down/left/right)
+# 6. for each unvisited successor, record parent and push to queue
+# 7. repeat level by level until goal is found
 
 INITIAL_STATE = (
     (2, 8, 3),

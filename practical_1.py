@@ -1,4 +1,12 @@
 # simple reflex agent for vacuum cleaner world
+#
+# algorithm:
+# 1. define environment with locations a and b
+# 2. set initial location of the vacuum cleaner
+# 3. read current location and its dirt status
+# 4. if location is dirty, perform suck action
+# 5. if location is clean, move to the other location (a -> b or b -> a)
+# 6. repeat for given steps and print final environment
 
 def reflex_vacuum_agent(location, status):
     # condition-action rules based on current percept
