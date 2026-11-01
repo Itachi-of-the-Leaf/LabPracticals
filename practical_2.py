@@ -72,6 +72,10 @@ def a_star_search(start_state, goal_state):
     while open_list:
         f, g, _, current = heapq.heappop(open_list)
 
+        # skip if already found a path with lower g
+        if g > g_costs.get(current, float('inf')):
+            continue
+
         # goal test
         if current == goal_state:
             # reconstruct path

@@ -43,7 +43,7 @@ def format_tour(tour):
     return " -> ".join(names + [names[0]])
 
 
-def local_beam_search(beam_width=4, max_iterations=20, random_seed=42):
+def local_beam_search(beam_width=4, max_iterations=20, patience=5, random_seed=42):
     random.seed(random_seed)
     num_cities = len(CITIES)
 
@@ -59,6 +59,7 @@ def local_beam_search(beam_width=4, max_iterations=20, random_seed=42):
     global_best_tour = min(beam, key=calculate_tour_cost)
     global_best_cost = calculate_tour_cost(global_best_tour)
     best_iteration = 0
+    no_improvement_count = 0
 
     print(f"Initial Beam (k = {beam_width}):")
     for tour in beam:
@@ -86,8 +87,16 @@ def local_beam_search(beam_width=4, max_iterations=20, random_seed=42):
             global_best_cost = current_best_cost
             global_best_tour = current_best
             best_iteration = iteration
+            no_improvement_count = 0
+        else:
+            no_improvement_count += 1
 
         print(f"Iteration {iteration}: Current Best = {current_best_cost}, Global Best = {global_best_cost}")
+
+        # stop if no improvement occurs for specified number of iterations
+        if no_improvement_count >= patience:
+            print(f"\nSearch stopped: no improvement for {patience} iterations.")
+            break
 
     return global_best_tour, global_best_cost, best_iteration
 

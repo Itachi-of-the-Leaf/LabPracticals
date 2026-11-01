@@ -1,3 +1,25 @@
+# ignore assignment pdf files
 *.pdf
+
+# python bytecode and cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# environments
+.venv/
+env/
+venv/
+ENV/
+
+# ide and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# os files
+.DS_Store
+Thumbs.db
